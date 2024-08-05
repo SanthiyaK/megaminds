@@ -5,14 +5,28 @@ const APIFeatures=require('../utils/apiFeatures');
 
 ///Get products -- api/v1/products
 exports.getProducts = catchAsyncError(async (req,res,next)=>{
-    const resperpage= 2;
-   const apiFeatures= new APIFeatures(Product.find(), req.query).search().filter().paginate(resperpage);
-  const products=await apiFeatures.query;
-   res.status(200).json({
-        success : true,
-        count:products.length,
-        products
-    })
+    const resperpage= 3;
+   /* const apiFeatures= new APIFeatures(Product.find(), req.query).search().filter().paginate(resperpage); */
+ 
+  /*  return next(new ErrorHandler('Unable to send request!', 400)) */
+  /* await new Promise(resolve => setTimeout(resolve,3000)) */
+
+            let buildQuery=()=>{
+                return new APIFeatures(Product.find(), req.query).search().filter()
+            }
+            const filteredProductsCount= await buildQuery().query.countDocuments({})
+            const totalProductsCount= await Product.countDocuments({});
+            let productsCount= totalProductsCount;
+            if(filteredProductsCount!== totalProductsCount){
+                productsCount=filteredProductsCount;
+            }
+            const products=await buildQuery().paginate(resperpage).query;
+            res.status(200).json({
+                    success : true,
+                    count:productsCount,
+                    resperpage,
+                    products
+                })
 })
 //create product- /api/v1/product/new
 exports.newProduct= catchAsyncError(async (req,res,next)=>{
@@ -24,8 +38,8 @@ exports.newProduct= catchAsyncError(async (req,res,next)=>{
     }) 
 });
 //get Single product -/api/v1/product/:id
-exports.getSingleProduct = async (req,res,next) => {
-    const product = await Product.findById(req.params._id);
+exports.getSingleProduct = catchAsyncError(async (req,res,next) => {
+    const product = await Product.findById(req.params.id);
     if(!product) {
         return next(new ErrorHandler('Product not found', 400));
     }
@@ -33,7 +47,7 @@ exports.getSingleProduct = async (req,res,next) => {
         success : true,
         product
     }) 
-}
+})
 //update product - /api/v1/product/:id
 exports.updateProduct = async (req, res, next) => {
     let product = await Product.findById(req.params.id);

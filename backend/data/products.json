@@ -6,7 +6,13 @@
         "ratings": 4.5,
         "images": [
             {
-                "image": "products1.jpg"
+                "image": "/images/products/1.jpg"
+            },
+            {
+                "image": "/images/products/1.1.jpg"
+            },
+            {
+                "image": "/images/products/1.2.jpg"
             }
         ],
         "category": "NightSuits",
@@ -54,7 +60,7 @@
         "ratings": 4,
         "images": [
           {
-            "image": "/images/products/6.jpg"
+            "image": "/images/products/4.jpg"
           }
         ],
         "category": "Kurtis",
@@ -66,11 +72,11 @@
       {
         "name": "Wrinkle dress",
         "price": 767.32,
-        "description": "Hight quality georgette with lining, 1/2 sleeve length, Available in 4 colors",
+        "description": "Hight quality georgette with lining, 1/2 sleeve length",
         "ratings": 5,
         "images": [
           {
-            "image": "/images/products/7.jpg"
+            "image": "/images/products/5.jpg"
           }
         ],
         "category": "Kurtis",
@@ -86,7 +92,7 @@
         "ratings": 5,
         "images": [
             {
-                "image": "/images/products/4.jpg"
+                "image": "/images/products/6.jpg"
             }
         ],
         "category": "Pants",
@@ -96,13 +102,13 @@
         "reviews": []
     },
     {
-        "name": "Campus Men's Maxico Running Shoes",
+        "name": "Shawl for Women",
         "price": 10.12,
-        "description": "The high raised back cover with extra padding.",
+        "description": "Long length shawl.",
         "ratings": 3,
         "images": [
             {
-                "image": "/images/products/5.jpg"
+                "image": "/images/products/7.jpg"
             }
         ],
         "category": "Duppatta/Shawl",
