@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrorAuth, updateProfile } from "../../actions/userActions";
 import { toast } from "react-toastify";
+import { clearUpdateProfile } from "../../slices/authSlice";
 
 export default function UpdateProfile() {
     const {  error, user, isUpdated } = useSelector(state => state.authState);
@@ -43,7 +44,7 @@ export default function UpdateProfile() {
             toast('Profile updated successfully',{
                 type: 'success',
                 position: "bottom-center",
-               /*  onOpen: () => dispatch(clearUpdateP()) */
+                onOpen: () => dispatch(clearUpdateProfile()) 
             })
             return;
         }

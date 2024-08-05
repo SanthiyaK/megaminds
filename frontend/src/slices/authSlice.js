@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const authSlice = createSlice({
     name: 'auth',
     initialState: {
-        loading: false,
+        loading: true,
         isAuthenticated: false
     },
     reducers: {
@@ -113,7 +113,70 @@ const authSlice = createSlice({
                 ...state,
                 isUpdated: false
             }
-        }
+        },
+        updatePasswordRequest(state, action){
+            return {
+                ...state,
+                loading: true,
+                isUpdated: false
+            }
+        },
+        updatePasswordSuccess(state, action){
+            return {
+                ...state,
+                loading: false,
+                isUpdated: true
+            }
+        },
+        updatePasswordFail(state, action){
+            return {
+                ...state,
+                loading: false,
+                error:  action.payload
+            }
+        },
+        forgotPasswordRequest(state, action){
+            return {
+                ...state,
+                loading: true,
+                message: null
+            }
+        },
+        forgotPasswordSuccess(state, action){
+            return {
+                ...state,
+                loading: false,
+                message: action.payload.message
+            }
+        },
+        forgotPasswordFail(state, action){
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
+        },
+        resetPasswordRequest(state, action){
+            return {
+                ...state,
+                loading: true,
+            }
+        },
+        resetPasswordSuccess(state, action){
+            return {
+                ...state,
+                loading: false,
+                isAuthenticated: true,
+                user: action.payload.user
+            }
+        },
+        resetPasswordFail(state, action){
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
+        },
     }
 })  
 const { actions, reducer } = authSlice;
@@ -132,7 +195,17 @@ export const {
     logoutFail,
     updateProfileRequest,
     updateProfileSuccess,
-    updateProfileFail
+    updateProfileFail,
+    clearUpdateProfile,
+    updatePasswordRequest,
+    updatePasswordSuccess,
+    updatePasswordFail,
+    forgotPasswordFail,
+    forgotPasswordSuccess,
+    forgotPasswordRequest,
+    resetPasswordFail,
+    resetPasswordRequest,
+    resetPasswordSuccess,
     }= actions;
 
     export default reducer;
