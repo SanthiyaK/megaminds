@@ -4,6 +4,7 @@ import { loginRequest ,loginSuccess,loginFail, clearError, registerFail, registe
 ,updatePasswordSuccess,updatePasswordFail,forgotPasswordRequest,forgotPasswordSuccess,forgotPasswordFail,resetPasswordRequest,
 resetPasswordFail,resetPasswordSuccess} from "../slices/authSlice"
 import axios from 'axios';
+import { deleteUserFail, deleteUserRequest, deleteUserSuccess, updateUserFail, updateUserRequest, updateUserSuccess, userFail, userRequest, usersFail, usersRequest, usersSuccess, userSuccess } from "../slices/userSlice";
 export const login = (email, password)=> async (dispatch)=>{
     try{
      dispatch(loginRequest())
@@ -119,6 +120,59 @@ export const resetPassword = (formData, token) => async (dispatch) => {
         dispatch(resetPasswordSuccess(data))
     } catch (error) {
         dispatch(resetPasswordFail(error.response.data.message))
+    }
+
+}
+
+export const getUsers =  async (dispatch) => {
+
+    try {
+        dispatch(usersRequest())
+        const { data }  = await axios.get(`/api/v1/admin/users`);
+        dispatch(usersSuccess(data))
+    } catch (error) {
+        dispatch(usersFail(error.response.data.message))
+    }
+
+}
+
+export const getUser = id => async (dispatch) => {
+
+    try {
+        dispatch(userRequest())
+        const { data }  = await axios.get(`/api/v1/admin/user/${id}`);
+        dispatch(userSuccess(data))
+    } catch (error) {
+        dispatch(userFail(error.response.data.message))
+    }
+
+}
+
+export const deleteUser = id => async (dispatch) => {
+
+    try {
+        dispatch(deleteUserRequest())
+        await axios.delete(`/api/v1/admin/user/${id}`);
+        dispatch(deleteUserSuccess())
+    } catch (error) {
+        dispatch(deleteUserFail(error.response.data.message))
+    }
+
+}
+
+export const updateUser = (id, formData) => async (dispatch) => {
+
+    try {
+        dispatch(updateUserRequest())
+        const config = {
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }
+        await axios.put(`/api/v1/admin/user/${id}`, formData, config);
+        dispatch(updateUserSuccess())
+    } catch (error) {
+        dispatch(updateUserFail(error.response.data.message))
     }
 
 }
