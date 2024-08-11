@@ -16,24 +16,19 @@ export default function UpdateProduct () {
     const [images, setImages] = useState([]);
     const [imagesCleared, setImagesCleared] = useState(false);
     const [imagesPreview, setImagesPreview] = useState([]);
-    const { id:productId  } = useParams();
+    const { id} = useParams();
     
-    const { loading, isProductUpdated, error, product } = useSelector( state => state.productState)
+    const { loading, isProductUpdated, error} = useSelector( state => state.productState)
 
     const categories = [
-        'Electronics',
-        'Mobile Phones',
-        'Laptops',
-        'Accessories',
-        'Headphones',
-        'Food',
-        'Books',
-        'Clothes/Shoes',
-        'Beauty/Health',
-        'Sports',
-        'Outdoor',
-        'Home'
-    ];
+        'Kurtis',
+        'Pants',
+        'Duppatta/Shawl',
+        'NightSuits',
+        'Palazzo',
+        'Cotton Short tops',
+        'Puff Sleeve Dress',
+        'Maternity'];
 
    
     const dispatch = useDispatch();
@@ -72,7 +67,7 @@ export default function UpdateProduct () {
             formData.append('images', image)
         })
         formData.append('imagesCleared' , imagesCleared);
-        dispatch(updateProduct(productId, formData))
+        dispatch(updateProduct(id, formData))
     }
 
     const clearImagesHandler = () => {
@@ -80,6 +75,23 @@ export default function UpdateProduct () {
         setImagesPreview([]);
         setImagesCleared(true);
     }
+
+    /* useEffect(() => {
+        if(product._id) {
+            setName(product.name);
+            setPrice(product.price);
+            setStock(product.stock);
+            setDescription(product.description);
+            setSeller(product.seller);
+            setCategory(product.category);
+            
+            let images = [];
+            product.images.forEach( image => {
+                images.push(image.image)
+            });
+            setImagesPreview(images)
+        }
+    },[product])  */ 
 
     
     useEffect(() => {
@@ -102,26 +114,9 @@ export default function UpdateProduct () {
             return
         }
 
-        dispatch(getProduct(productId))
-    }, [isProductUpdated, error, dispatch,productId])
+        dispatch(getProduct(id))
+    }, [isProductUpdated, error, dispatch,id])
 
-
-     useEffect(() => {
-        if(product._id) {
-            setName(product.name);
-            setPrice(product.price);
-            setStock(product.stock);
-            setDescription(product.description);
-            setSeller(product.seller);
-            setCategory(product.category);
-            
-            let images = [];
-            product.images.forEach( image => {
-                images.push(image.image)
-            });
-            setImagesPreview(images)
-        }
-    },[product]) 
 
 
     return (

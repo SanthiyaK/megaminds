@@ -31,6 +31,21 @@ exports.newOrder =  catchAsyncError( async (req, res, next) => {
         order
     })
 })
+//addressOrder
+exports.addressOrder =  catchAsyncError( async (req, res, next) => {
+       const order = await Order.find({
+        orderItems,
+        shippingInfo,
+        paymentInfo,
+        paidAt: Date.now(),
+        user: req.user.id
+    })
+
+    res.status(200).json({
+        success: true,
+        order
+    })
+})
 //Get Single Order - api/v1/order/:id
 exports.getSingleOrder = catchAsyncError(async (req, res, next) => {
     const order = await Order.findById(req.params.id).populate('user', 'name email');

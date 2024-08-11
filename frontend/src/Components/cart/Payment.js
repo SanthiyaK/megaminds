@@ -6,10 +6,10 @@ import { toast } from "react-toastify";
 import { orderCompleted } from "../../slices/cartSlice";
 import axios from "axios";
 import { validateShipping } from "./Shipping";
-import { useEffect } from "react";
+import { useEffect } from "react"; 
 import { createOrder } from "../../actions/orderActions";
 import { clearError as clearOrderError } from "../../slices/orderSlice";
-
+ 
 
 
 export default function Payment() {
@@ -17,13 +17,13 @@ export default function Payment() {
     const elements = useElements();
     const dispatch = useDispatch()
     const navigate = useNavigate();
-    const orderInfo = JSON.parse(sessionStorage.getItem('orderInfo'))
+    const orderInfo = JSON.parse(sessionStorage.getItem('orderInfo')) 
     const { user } = useSelector(state => state.authState)
     const {items:cartItems, shippingInfo } = useSelector(state => state.cartState)
-    const { error:orderError } = useSelector(state => state.orderState)
-
+     const { error:orderError } = useSelector(state => state.orderState) 
+    
     const paymentData = {
-        amount : Math.round(orderInfo.totalPrice * 100),
+        amount : Math.round( orderInfo.totalPrice * 100),
         shipping :{
             name: user.name,
             address:{
@@ -50,7 +50,7 @@ export default function Payment() {
         
     }
 
-    useEffect(() => {
+     useEffect(() => {
         validateShipping(shippingInfo, navigate)
         if(orderError) {
             toast(orderError, {
@@ -59,9 +59,9 @@ export default function Payment() {
                 onOpen: ()=> { dispatch(clearOrderError()) }
             })
             return
-        }
+        } 
 
-    },[dispatch, navigate, orderError,shippingInfo])
+    },[navigate,shippingInfo,dispatch,orderError]) 
 
     const submitHandler = async (e) => {
         e.preventDefault();

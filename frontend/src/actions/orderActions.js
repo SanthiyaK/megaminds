@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { adminOrdersFail, adminOrdersRequest, adminOrdersSuccess, createOrderFail, createOrderRequest, createOrderSuccess, deleteOrderFail, deleteOrderRequest, deleteOrderSuccess, orderDetailFail, orderDetailRequest, orderDetailSuccess, updateOrderFail, updateOrderRequest, updateOrderSuccess, userOrdersFail, userOrdersRequest, userOrdersSuccess } from '../slices/orderSlice';
+import {  adminOrdersFail, adminOrdersRequest, adminOrdersSuccess, createOrderFail, createOrderRequest, createOrderSuccess, deleteOrderFail, deleteOrderRequest, deleteOrderSuccess, orderDetailFail, orderDetailRequest, orderDetailSuccess, updateOrderFail, updateOrderRequest, updateOrderSuccess, userOrdersFail, userOrdersRequest, userOrdersSuccess } from '../slices/orderSlice';
 
 
 export const createOrder = order => async(dispatch) => {
@@ -20,6 +20,7 @@ export const userOrders = async(dispatch) => {
         dispatch(userOrdersFail(error.response.data.message))
     }
 }
+
 export const orderDetail = id => async(dispatch) => {
     try {
        dispatch(orderDetailRequest())

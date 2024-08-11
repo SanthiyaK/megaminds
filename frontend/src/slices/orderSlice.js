@@ -49,7 +49,9 @@ const orderSlice = createSlice({
             return {
                 ...state,
                 loading: false,
-                userOrders: action.payload.orders
+                userOrders: action.payload.orders,
+                orderDetail: action.payload.order,
+               
             }
         },
         userOrdersFail(state, action) {
@@ -152,8 +154,8 @@ const orderSlice = createSlice({
                 ...state,
                 isOrderUpdated: false
             }
-        }
-
+        },
+       
 
     }
 });
@@ -181,7 +183,8 @@ export const {
     updateOrderRequest,
     updateOrderSuccess,
     clearOrderDeleted,
-    clearOrderUpdated
+    clearOrderUpdated,
+   
  } = actions;
 
 export default reducer;

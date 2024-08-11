@@ -5,7 +5,7 @@ const APIFeatures=require('../utils/apiFeatures');
 
 ///Get products -- api/v1/products
 exports.getProducts = catchAsyncError(async (req,res,next)=>{
-    const resperpage= 4;
+    const resperpage= 8;
    /* const apiFeatures= new APIFeatures(Product.find(), req.query).search().filter().paginate(resperpage); */
  
   /*  return next(new ErrorHandler('Unable to send request!', 400)) */
