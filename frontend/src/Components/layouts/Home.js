@@ -6,6 +6,7 @@ import Loader from "./Loader";
 import Product from "../product/Product";
 import {toast} from "react-toastify"
 import Pagination from "react-js-pagination";
+import Design from "./Design";
 export default function Home(){
     const dispatch=  useDispatch();
 
@@ -28,6 +29,7 @@ export default function Home(){
 
     return(
         <Fragment>
+            <Design/>
         {loading ? <Loader/>:
         <Fragment>
         

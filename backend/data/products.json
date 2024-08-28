@@ -1,120 +1,110 @@
+
 [
     {
-        "name": " Women Knitted Cotten T-Shirt & Joggers Set",
-        "price": 399,
-        "description": "Pant with pocket, comes with both elastic and Rope and pouch Packing.",
+        "name": "Nuturemite Abso curcumin 500 mg Veg capsules",
+        "price": 858.00,
+        "description": "A clinically tested, standardized, and full-spectrum extract containing curcuminoids to support joint health and reduce inflammation. AbsoCurcumin by Botanic healthcare pvt ltd.",
         "ratings": 4.5,
         "images": [
             {
                 "image": "/images/products/1.jpg"
             },
             {
-                "image": "/images/products/1.1.jpg"
-            },
-            {
-                "image": "/images/products/1.2.jpg"
+                "image": "/images/products/2.jpg"
             }
         ],
-        "category": "NightSuits",
+        "category": "Women Health",
         "seller": "Amazon",
-        "stock": 5,
-        "numOfReviews": 15,
-        "reviews": []
+        "stock": 5
+       
     },
     {
-        "name": "Reyon Palazzo",
-        "price": 200,
-        "description": "Its comes with floral design along with rope.",
+        "name": "Nuturemite Banana fruit Spray dried Powder 450 gms",
+        "price": 150.32,
+        "description": "Banana powder is very beneficial for heart health as it is rich in potassium. It helps is reducing cholesterol levels and boosts muscle activity. It improves the digestion as well because of its high fiber content. This powder improves the absorption of minerals in the body also.",
         "ratings": 3.5,
         "images": [
             {
                 "image": "/images/products/2.jpg"
             }
         ],
-        "category": "Palazzo",
+        "category": "Men Health",
         "seller": "Flipkart",
-        "stock": 9,
-        "numOfReviews": 5,
-        "reviews": []
+        "stock": 9
     },
     {
-        "name": "Maternity kurti",
-        "price": 450,
-        "description": "Its comes with the Umbrella type",
+        "name": "Nuturemite Strawberry fruit Spray dried Powder 250 gms",
+        "price": 360.00,
+        "description": " Strawberry powder is more beneficial than the fruit itself.It is loaded with antioxidants and has high fiber content. It supports immunity, skin health",
         "ratings": 2,
         "images": [
             {
                 "image": "/images/products/3.jpg"
             }
         ],
-        "category": "Maternity",
+        "category": "Antioxidant",
         "seller": "Ebay",
-        "stock": 9,
-        "numOfReviews": 12,
-        "reviews": []
+        "stock": 9
+       
     },
     {
-        "name": "Chettiand cotton",
+        "name": "Nuturemite Wheat grass Powder 900 gms",
         "price": 250.45,
-        "description": "Kurti with pocket, plain with border",
+        "description": " wheat grass powder is a rich source of antioxidants and important micronutrients which protects the body from the damage caused by free radicals and reduces oxidative stress in the body. It can also be used to treat and prevent heart conditions and acts as a remedy for pains related to arthritis and rheumatism. As a heart health tonic, it reduces high cholesterol levels and prevent heart failured.",
         "ratings": 4,
         "images": [
           {
-            "image": "/images/products/4.jpg"
+            "image": "/images/products/6.jpg"
           }
         ],
-        "category": "Kurtis",
+        "category": "Ayurvedic",
         "seller": "Ebay",
-        "stock": 9,
-        "numOfReviews": 12,
-        "reviews": []
+        "stock": 9
+        
       },
       {
-        "name": "Wrinkle dress",
-        "price": 767.32,
-        "description": "Hight quality georgette with lining, 1/2 sleeve length",
+        "name": "Nuturemite Bhringaraj Powder 450 gms",
+        "price": 200.00,
+        "description": "Bhringraj is ruler of hair, it is rich in protein, vitamins, and antioxidants which can protect body from other diseases. Bhringraj with hair oil can effectively promotes hair growth as well as reduces the grey hair. Bhringraj juice rejuvenates the skin helps in anti-aging, Bhringraj powder has anti-microbial property which can manage skin infections. Bhringraj powder protects liver cells and manages cholesterol levels",
         "ratings": 5,
         "images": [
           {
-            "image": "/images/products/5.jpg"
+            "image": "/images/products/7.jpg"
           }
         ],
-        "category": "Kurtis",
+        "category": "Immune Health",
         "seller": "Ebay",
-        "stock": 9,
-        "numOfReviews": 12,
-        "reviews": []
+        "stock": 9
+       
     },
     {
-        "name": "Cigar Pants",
-        "price": 290,
-        "description": "Pants with both side pockets",
+        "name": "Nuturemite Mango fruit Spray dried Powder 900 gms",
+        "price": 720.00,
+        "description": "Mango Powder contains many nutrients including vitamin A, E and C, and antioxidants. The acid found in mangos is mainly citric acid. It improves the immunity system of the body and is also quite beneficial for your skin and hair",
         "ratings": 5,
         "images": [
             {
-                "image": "/images/products/6.jpg"
+                "image": "/images/products/4.jpg"
             }
         ],
-        "category": "Pants",
+        "category": "General Health",
         "seller": "Amazon",
-        "stock": 4,
-        "numOfReviews": 20,
-        "reviews": []
+        "stock": 4
+        
     },
     {
-        "name": "Shawl for Women",
-        "price": 10.12,
-        "description": "Long length shawl.",
+        "name": "Nuturemite Cranberry 500 mg Veg capsules",
+        "price": 519.00,
+        "description": "Cranberry is a natural antioxidant, Detoxifier and it contain Vitamin C and E, Vitamin C supports immune system and Vitamn E helps fight cell damage free radical in the bosy. Cranberry prevents the urinary tract infection, reduces the risk of kidney stomes. Cranberry promotes oral care",
         "ratings": 3,
         "images": [
             {
-                "image": "/images/products/7.jpg"
+                "image": "/images/products/5.jpg"
             }
         ],
-        "category": "Duppatta/Shawl",
+        "category": "Vitamins&Minerals",
         "seller": "Ebay",
-        "stock": 6,
-        "numOfReviews": 9,
-        "reviews": []
+        "stock": 6
+        
     }
 ]

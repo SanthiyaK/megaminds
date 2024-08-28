@@ -41,6 +41,7 @@ import UpdateUser from './Components/admin/UpdateUser';
 import ReviewList from './Components/admin/ReviewList';
 import OrderAddress from './Components/order/OrderAddress';
 
+
 function App() {
   const [stripeApiKey, setStripeApiKey] = useState("")
    useEffect(()=>{
@@ -57,6 +58,7 @@ function App() {
     <div className="App">
       <HelmetProvider> 
         <Header/>
+      
              <div className='container container-fluid'>
                 <ToastContainer theme='dark'/>
                   <Routes>  

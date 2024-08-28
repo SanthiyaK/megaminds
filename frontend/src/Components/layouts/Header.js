@@ -14,11 +14,11 @@ export default function Header () {
       dispatch(logout);
    }
 return(
-    <nav className="navbar row">
+    <nav className="navbar row navbar-light bg-light p-4">
     <div className="col-12 col-md-3">
       <div className="navbar-brand">
         <Link to="/">
-        <img width="150px" src="/images/logo.jpg" alt="krishLogo" />
+        <img class="img-responsive" src="//nuturemite.info/wp-content/uploads/2022/10/nuturmite_logo_tranparent.png" alt="Nuturemite" width="200"/>
         </Link>
       </div>
     </div>
@@ -31,15 +31,17 @@ return(
     { isAuthenticated ? 
             (
               <Dropdown className='d-inline' >
-                  <Dropdown.Toggle variant='default text-white pr-5' id='dropdown-basic'>
+                   <Dropdown.Toggle variant='default text-white pr-5' id='dropdown-basic'> 
+                
                     <figure className='avatar avatar-nav'>
                       <Image width="50px" src={user.avatar??'./images/default_avatar.png'}  />
                     </figure>
-                    <span>{user.name}</span>
+                    <span className="text-primary">{user.name}</span>
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                   
-                  {user.role==='admin' && <Dropdown.Item onClick={() => {navigate('/admin/dashboard')}} className='text-dark'>Dashboard</Dropdown.Item>}
+                  {
+                  user.role==='admin' && <Dropdown.Item onClick={() => {navigate('/admin/dashboard')}} className='text-dark'>Dashboard</Dropdown.Item>}
                   <Dropdown.Item onClick={() => {navigate('/myprofile')}} className='text-dark'>Profile</Dropdown.Item>
                   <Dropdown.Item onClick={() => {navigate('/orders')}} className='text-dark'>Orders</Dropdown.Item>
                   <Dropdown.Item onClick={logoutHandler} className='text-danger'>Logout</Dropdown.Item>
@@ -48,7 +50,7 @@ return(
             ):
       <Link to="/login" className="btn" id="login_btn">Login</Link>
       }
-      <Link to="/cart"><span id="cart" className="ml-3">Cart</span></Link>
+      <Link to="/cart"><span id="cart" className="ml-3 text-primary">Cart</span></Link>
       <span className="ml-1" id="cart_count">{cartItems.length}</span>
     </div>
   </nav>
